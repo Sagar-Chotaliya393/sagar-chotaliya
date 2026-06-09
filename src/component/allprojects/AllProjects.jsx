@@ -140,9 +140,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -167,9 +167,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -194,9 +194,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -220,9 +220,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -247,9 +247,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -274,9 +274,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -301,9 +301,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -328,9 +328,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 
@@ -355,9 +355,9 @@ function AllProjects() {
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer">
                 <FaGithub /> Code
               </a>
-              <a href="#" target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt size={11} /> Live Demo
-              </a>
+              <button>
+                Live Demo
+              </button>
             </div>
           </div>
 

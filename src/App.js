@@ -3,7 +3,7 @@ import Header from './component/header/Header';
 import Footer from './component/footer/Footer';
 import Main from './component/main/Main';
 import AllProjects from './component/allprojects/AllProjects';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

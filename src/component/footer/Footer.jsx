@@ -21,11 +21,11 @@ function Footer() {
                 className="w-9 h-9 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-blue-500 hover:text-blue-500 transition">
                 <FaGithub size={16} />
               </a>
-              <a href="#" target="_blank" rel="noreferrer"
+              <a href="https://www.linkedin.com/in/sagar-chotaliya-b48a862a3/" target="_blank" rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-blue-500 hover:text-blue-500 transition">
                 <FaLinkedin size={16} />
               </a>
-              <a href="#" target="_blank" rel="noreferrer"
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-pink-500 hover:text-pink-500 transition">
                 <FaInstagram size={16} />
               </a>
