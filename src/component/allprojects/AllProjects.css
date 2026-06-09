@@ -1,0 +1,320 @@
+/* ─────────────────────────────────────────
+   CSS VARIABLES — matches Main.css / global
+───────────────────────────────────────── */
+:root {
+  --clr-900: #0f172a;
+  --clr-800: #1e293b;
+  --clr-600: #475569;
+  --clr-400: #94a3b8;
+  --clr-200: #e2e8f0;
+  --clr-100: #f1f5f9;
+  --clr-50:  #f8fafc;
+
+  --accent:       #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #eff6ff;
+  --accent-mid:   #bfdbfe;
+
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:     0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.12);
+  --shadow-accent: 0 8px 24px rgba(37,99,235,0.25);
+}
+
+/* ─────────────────────────────────────────
+   PAGE WRAPPER
+───────────────────────────────────────── */
+.ap-page {
+  min-height: 100vh;
+  background: var(--clr-50);
+}
+
+/* ─────────────────────────────────────────
+   HERO SECTION — mirrors home gradient hero
+───────────────────────────────────────── */
+.ap-hero {
+  position: relative;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #eef2ff 100%);
+  padding: 80px 24px 70px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ap-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(37,99,235,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(99,102,241,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ap-hero-content {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: ap-fadeUp 0.65s ease both;
+}
+
+@keyframes ap-fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Back button */
+.ap-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  margin-bottom: 28px;
+  padding: 8px 18px;
+  border-radius: 99px;
+  border: 1.5px solid var(--accent-mid);
+  background: var(--accent-light);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+}
+.ap-back-btn:hover {
+  transform: translateX(-4px);
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Eyebrow — matches .section-eyebrow */
+.ap-eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+/* Page title — matches .section-title */
+.ap-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--clr-900);
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.ap-subtitle {
+  color: var(--clr-600);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Stats row */
+.ap-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  background: #fff;
+  border: 1px solid var(--clr-200);
+  border-radius: 18px;
+  padding: 18px 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ap-stat span {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.ap-stat p {
+  font-size: 0.72rem;
+  color: var(--clr-400);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.ap-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--clr-200);
+}
+
+/* ─────────────────────────────────────────
+   GRID CONTAINER
+───────────────────────────────────────── */
+.ap-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .ap-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .ap-grid { grid-template-columns: 1fr; }
+  .ap-title { font-size: 2.2rem; }
+  .ap-stats { gap: 18px; padding: 14px 22px; }
+}
+
+/* ─────────────────────────────────────────
+   PROJECT CARD — mirrors .project-card
+───────────────────────────────────────── */
+.ap-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  padding: 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  animation: ap-cardIn 0.5s ease both;
+}
+
+@keyframes ap-cardIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Stagger each card */
+.ap-card:nth-child(1)  { animation-delay: 0.05s; }
+.ap-card:nth-child(2)  { animation-delay: 0.10s; }
+.ap-card:nth-child(3)  { animation-delay: 0.15s; }
+.ap-card:nth-child(4)  { animation-delay: 0.20s; }
+.ap-card:nth-child(5)  { animation-delay: 0.25s; }
+.ap-card:nth-child(6)  { animation-delay: 0.30s; }
+.ap-card:nth-child(7)  { animation-delay: 0.35s; }
+.ap-card:nth-child(8)  { animation-delay: 0.40s; }
+.ap-card:nth-child(9)  { animation-delay: 0.45s; }
+.ap-card:nth-child(10) { animation-delay: 0.50s; }
+.ap-card:nth-child(11) { animation-delay: 0.55s; }
+.ap-card:nth-child(12) { animation-delay: 0.60s; }
+.ap-card:nth-child(13) { animation-delay: 0.65s; }
+
+/* Top accent bar — same as .project-card::before */
+.ap-card-top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  border-radius: 0;
+}
+.ap-card:hover .ap-card-top-bar { transform: scaleX(1); }
+
+.ap-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Accent bar colors per variant */
+.ap-card--blue   .ap-card-top-bar { background: linear-gradient(90deg, #2563eb, #6366f1); }
+.ap-card--green  .ap-card-top-bar { background: linear-gradient(90deg, #16a34a, #059669); }
+.ap-card--purple .ap-card-top-bar { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+.ap-card--amber  .ap-card-top-bar { background: linear-gradient(90deg, #d97706, #f59e0b); }
+
+/* Border on hover per variant */
+.ap-card--blue:hover   { border-color: var(--accent-mid); }
+.ap-card--green:hover  { border-color: #bbf7d0; }
+.ap-card--purple:hover { border-color: #ddd6fe; }
+.ap-card--amber:hover  { border-color: #fde68a; }
+
+/* ─────────────────────────────────────────
+   BADGES — mirrors .badge
+───────────────────────────────────────── */
+.ap-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+.ap-badge--blue   { background: #dbeafe; color: #1e40af; }
+.ap-badge--green  { background: #dcfce7; color: #166534; }
+.ap-badge--purple { background: #ede9fe; color: #6d28d9; }
+.ap-badge--amber  { background: #fef9c3; color: #854d0e; }
+
+/* ─────────────────────────────────────────
+   CARD CONTENT
+───────────────────────────────────────── */
+.ap-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-900);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.ap-card-desc {
+  font-size: 0.9rem;
+  color: var(--clr-600);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 1.1rem;
+}
+
+/* ─────────────────────────────────────────
+   TECH TAGS — mirrors project tags in Main
+───────────────────────────────────────── */
+.ap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+.ap-tags span {
+  background: var(--clr-100);
+  color: var(--clr-600);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  transition: background 0.2s, color 0.2s;
+}
+.ap-tags span:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────
+   CARD LINKS — mirrors project card links
+───────────────────────────────────────── */
+.ap-card-links {
+  display: flex;
+  gap: 18px;
+  margin-top: auto;
+}
+.ap-card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--clr-800);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.ap-card-links a:hover {
+  color: var(--accent);
+}
