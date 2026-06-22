@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -46,6 +47,12 @@ function Footer() {
                   </a>
                 </li>
               ))}
+
+              <li>
+                <Link to="/forms">
+                  Forms
+                </Link>
+              </li>
             </ul>
           </div>
 
