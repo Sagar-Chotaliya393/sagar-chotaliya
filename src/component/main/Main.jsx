@@ -172,7 +172,7 @@ function Main() {
 
           <div className="flex gap-4 mt-8 justify-center lg:justify-start flex-wrap">
             <a href="#contact" className="btn-primary">Hire Me</a>
-            <a href="/resume.pdf" download className="btn-outline">Download CV</a>
+            <a href="/Sagar_Chotaliya_CV.pdf" download className="btn-outline">Download CV</a>
           </div>
 
           <div className="flex gap-6 mt-8 text-4xl justify-center lg:justify-start">
