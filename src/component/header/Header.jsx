@@ -1,6 +1,7 @@
 import "./Header.css";
 import { useEffect, useState, useCallback } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const navLinks = [
   { id: "home", label: "Home" },
@@ -11,6 +12,8 @@ const navLinks = [
 ];
 
 function Header() {
+
+  const location = useLocation();
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,54 +59,77 @@ function Header() {
       </a>
 
       {/* Desktop Nav */}
-      <nav className="nav-links" aria-label="Main navigation">
-        {navLinks.map((link) => (
-          <a
-            key={link.id}
-            href={`#${link.id}`}
-            className={active === link.id ? "active" : ""}
-            aria-current={active === link.id ? "page" : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+
+      {
+        location.pathname === '/' ?
+          (
+            <nav className="nav-links" aria-label="Main navigation">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  className={active === link.id ? "active" : ""}
+                  aria-current={active === link.id ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          ) : null
+      }
+
 
       {/* Mobile Hamburger */}
-      <button
-        className="hamburger"
-        onClick={() => setMenuOpen((prev) => !prev)}
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-        aria-expanded={menuOpen}
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </button>
+
+      {
+        location.pathname === '/' ?
+          (<button
+            className="hamburger"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>) : null
+      }
+
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`mobile-overlay ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden="true"
-      />
+
+      {
+        location.pathname === '/' ?
+          (
+            <div
+              className={`mobile-overlay ${menuOpen ? "open" : ""}`}
+              onClick={() => setMenuOpen(false)}
+              aria-hidden="true"
+            />
+          ) : null
+      }
+
 
       {/* Mobile Menu */}
-      <nav
-        className={`mobile-menu ${menuOpen ? "open" : ""}`}
-        aria-label="Mobile navigation"
-        aria-hidden={!menuOpen}
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.id}
-            href={`#${link.id}`}
-            className={active === link.id ? "active" : ""}
-            onClick={() => setMenuOpen(false)}
-            tabIndex={menuOpen ? 0 : -1}
+      {
+        location.pathname === "/" && (
+          <nav
+            className={`mobile-menu ${menuOpen ? "open" : ""}`}
+            aria-label="Mobile navigation"
+            aria-hidden={!menuOpen}
           >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={active === link.id ? "active" : ""}
+                onClick={() => setMenuOpen(false)}
+                tabIndex={menuOpen ? 0 : -1}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        )
+      }
 
     </header>
   );

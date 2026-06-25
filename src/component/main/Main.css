@@ -8,27 +8,30 @@
   --clr-400: #94a3b8;
   --clr-200: #e2e8f0;
   --clr-100: #f1f5f9;
-  --clr-50:  #f8fafc;
+  --clr-50: #f8fafc;
 
-  --accent:       #2563eb;
+  --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --accent-light: #eff6ff;
-  --accent-mid:   #bfdbfe;
+  --accent-mid: #bfdbfe;
 
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-  --shadow-accent: 0 8px 24px rgba(37,99,235,0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 8px 24px rgba(37, 99, 235, 0.25);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 /* ─────────────────────────────────────────
    SCROLL PROGRESS BAR
 ───────────────────────────────────────── */
 .scroll-progress-bar {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--accent), #6366f1);
   z-index: 9999;
@@ -44,6 +47,7 @@ html { scroll-behavior: smooth; }
   transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -56,13 +60,22 @@ html { scroll-behavior: smooth; }
   animation: float 4s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .profile-img:hover {
   transform: scale(1.05) rotate(1.5deg);
-  box-shadow: 0 0 0 10px rgba(37,99,235,0.12), 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.12), 0 20px 50px rgba(0, 0, 0, 0.12);
 }
+
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -72,9 +85,17 @@ html { scroll-behavior: smooth; }
   animation: slideUp 0.7s ease both;
   animation-delay: 0.15s;
 }
+
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -85,23 +106,42 @@ html { scroll-behavior: smooth; }
   padding-left: 22px !important;
   animation: fadeInDown 0.55s ease both;
 }
+
 .badge-pulse::before {
   content: "";
   position: absolute;
-  left: 10px; top: 50%;
+  left: 10px;
+  top: 50%;
   transform: translateY(-50%);
-  width: 7px; height: 7px;
+  width: 7px;
+  height: 7px;
   background: #16a34a;
   border-radius: 50%;
   animation: ping 1.6s ease-in-out infinite;
 }
+
 @keyframes ping {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(22,163,74,0.5); }
-  50%       { box-shadow: 0 0 0 6px rgba(22,163,74,0); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(22, 163, 74, 0);
+  }
 }
+
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -120,12 +160,16 @@ html { scroll-behavior: smooth; }
   overflow: hidden;
   transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
+
 .btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-accent);
 }
-.btn-primary:active { transform: scale(0.97); }
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
 
 .btn-outline {
   border: 2px solid var(--accent);
@@ -139,12 +183,16 @@ html { scroll-behavior: smooth; }
   display: inline-block;
   transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
+
 .btn-outline:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37,99,235,0.15);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
-.btn-outline:active { transform: scale(0.97); }
+
+.btn-outline:active {
+  transform: scale(0.97);
+}
 
 /* ─────────────────────────────────────────
    SOCIAL ICONS
@@ -154,14 +202,16 @@ html { scroll-behavior: smooth; }
   color: var(--clr-600);
   transition: color 0.25s, transform 0.25s, filter 0.25s;
 }
+
 .social-icon:hover {
   color: var(--accent);
   transform: scale(1.22) translateY(-3px);
-  filter: drop-shadow(0 4px 8px rgba(37,99,235,0.35));
+  filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.35));
 }
+
 .social-icon.instagram:hover {
   color: #e1306c;
-  filter: drop-shadow(0 4px 8px rgba(225,48,108,0.35));
+  filter: drop-shadow(0 4px 8px rgba(225, 48, 108, 0.35));
 }
 
 /* ─────────────────────────────────────────
@@ -176,6 +226,7 @@ html { scroll-behavior: smooth; }
   text-align: center;
   margin-bottom: 0.5rem;
 }
+
 .section-title {
   font-size: 2.6rem;
   font-weight: 700;
@@ -191,15 +242,23 @@ html { scroll-behavior: smooth; }
    Fix: lighter weight + proper color contrast
 ───────────────────────────────────────── */
 #about p.text-lg {
-  color: var(--clr-600);       /* #475569 — clear, readable, not black */
-  font-size: 1rem;             /* slightly smaller = less heavy */
-  line-height: 1.85;           /* more breathing room */
-  font-weight: 400;            /* regular — not bold */
+  color: var(--clr-600);
+  /* #475569 — clear, readable, not black */
+  font-size: 1rem;
+  /* slightly smaller = less heavy */
+  line-height: 1.85;
+  /* more breathing room */
+  font-weight: 400;
+  /* regular — not bold */
 }
+
 #about p strong {
-  color: var(--clr-800);       /* #1e293b — dark but not black */
-  font-weight: 600;            /* semibold, not 700 */
+  color: var(--clr-800);
+  /* #1e293b — dark but not black */
+  font-weight: 600;
+  /* semibold, not 700 */
 }
+
 #about p span.font-semibold {
   color: var(--clr-800);
   font-weight: 600;
@@ -215,6 +274,7 @@ html { scroll-behavior: smooth; }
   border-left-style: solid;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .timeline-card:hover {
   transform: translateX(5px);
   box-shadow: var(--shadow-md);
@@ -240,17 +300,47 @@ html { scroll-behavior: smooth; }
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   border: 1px solid transparent;
 }
+
 .skill-pill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(37,99,235,0.2);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
 }
-.skill-pill--blue   { background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
-.skill-pill--green  { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
-.skill-pill--amber  { background: #fef9c3; color: #854d0e; border-color: #fde68a; }
 
-.skill-pill--blue:hover  { background: var(--accent); color: #fff; border-color: var(--accent); }
-.skill-pill--green:hover { background: #16a34a; color: #fff; border-color: #16a34a; }
-.skill-pill--amber:hover { background: #d97706; color: #fff; border-color: #d97706; }
+.skill-pill--blue {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.skill-pill--green {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.skill-pill--amber {
+  background: #fef9c3;
+  color: #854d0e;
+  border-color: #fde68a;
+}
+
+.skill-pill--blue:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.skill-pill--green:hover {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+.skill-pill--amber:hover {
+  background: #d97706;
+  color: #fff;
+  border-color: #d97706;
+}
 
 /* ─────────────────────────────────────────
    PROJECT CARDS
@@ -267,17 +357,24 @@ html { scroll-behavior: smooth; }
   position: relative;
   overflow: hidden;
 }
+
 .project-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--accent), #6366f1);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
 }
-.project-card:hover::before { transform: scaleX(1); }
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
 .project-card:hover {
   transform: translateY(-7px);
   box-shadow: var(--shadow-lg);
@@ -297,9 +394,21 @@ html { scroll-behavior: smooth; }
   border-radius: 999px;
   width: fit-content;
 }
-.badge-blue   { background: #dbeafe; color: #1e40af; }
-.badge-green  { background: #dcfce7; color: #166534; }
-.badge-purple { background: #ede9fe; color: #6d28d9; }
+
+.badge-blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
 
 /* ─────────────────────────────────────────
    CONTACT CARDS
@@ -315,6 +424,7 @@ html { scroll-behavior: smooth; }
   border: 1px solid var(--clr-200);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+
 .contact-info-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
@@ -329,7 +439,10 @@ html { scroll-behavior: smooth; }
   color: var(--clr-900);
   background: #fff;
 }
-.input-field:focus { transform: none; }
+
+.input-field:focus {
+  transform: none;
+}
 
 /* ─────────────────────────────────────────
    SUBMIT BUTTON — shimmer
@@ -347,18 +460,35 @@ html { scroll-behavior: smooth; }
   overflow: hidden;
   transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
+
 .btn-submit::after {
   content: "";
   position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
   transition: left 0.5s ease;
 }
-.btn-submit:hover::after { left: 150%; }
+
+.btn-submit:hover::after {
+  left: 150%;
+}
+
 .btn-submit:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-accent);
 }
-.btn-submit:active { transform: scale(0.97); }
+
+.btn-submit:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+  #home {
+    padding-top: 80px;
+    padding-bottom: 22px;
+  }
+}
