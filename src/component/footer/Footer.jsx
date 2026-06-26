@@ -76,7 +76,7 @@ function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/forms" className="footer-link">
+                <Link to="/forms" className="footer-link" style={{ display: "none"}}>
                   Forms Playground
                 </Link>
               </li>

@@ -28,6 +28,7 @@ html {
 /* ─────────────────────────────────────────
    SCROLL PROGRESS BAR
 ───────────────────────────────────────── */
+
 .scroll-progress-bar {
   position: fixed;
   top: 0;
@@ -376,8 +377,8 @@ html {
 }
 
 .project-card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
   border-color: var(--accent-mid);
 }
 
