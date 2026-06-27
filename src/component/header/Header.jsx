@@ -2,6 +2,7 @@ import "./Header.css";
 import { useEffect, useState, useCallback } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { id: "home", label: "Home" },
@@ -54,9 +55,9 @@ function Header() {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
 
-      <a href="#home" className="logo" aria-label="Go to top">
+      <Link to="/" className="logo" aria-label="Go to top">
         Sagar<span>.dev</span>
-      </a>
+      </Link>
 
       {/* Desktop Nav */}
 

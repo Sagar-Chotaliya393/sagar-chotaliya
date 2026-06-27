@@ -14,11 +14,18 @@ function AllProjects() {
             <FaArrowLeft size={13} />
             Back to Home
           </Link>
-          <p className="ap-eyebrow">Things I've built</p>
-          <h1 className="ap-title">All Projects</h1>
+          <p className="ap-eyebrow">
+            My Work
+          </p>
+
+          <h1 className="ap-title">
+            Projects I've Worked On
+          </h1>
+
           <p className="ap-subtitle">
-            A complete collection of my work — from robust PHP backends
-            to clean React frontends and full-stack production systems.
+            Here's a collection of projects I've built while working professionally
+            and while learning new technologies. Each one helped me improve my skills
+            and solve real-world problems.
           </p>
           <div className="ap-stats">
             <div className="ap-stat"><span>12</span><p>Projects</p></div>
@@ -40,10 +47,10 @@ function AllProjects() {
             <div className="ap-badge ap-badge--green">PHP + Full Stack</div>
             <h2 className="ap-card-title">Library Management System</h2>
             <p className="ap-card-desc">
-              Complete digital library solution for JD Gabani Library. Handles
-              book issuing & receiving with automatic late fee calculation,
-              member management, and real-time availability tracking.
-              Generates detailed reports and receipts for every transaction.
+              A complete library management system built for JD Gabani Library. It
+              helps librarians manage books, members, issue/return records, and late
+              fees from one place. The main goal was to make everyday library work
+              faster, simpler, and more organized.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -68,10 +75,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--blue">eCommerce + API</div>
             <h2 className="ap-card-title">Mokonut eCommerce Platform</h2>
             <p className="ap-card-desc">
-              Full-featured eCommerce website with online payment gateway
-              integration for seamless order placement. Connected with
-              Shiprocket for automated order fulfillment. Complete REST API
-              for mobile app with order tracking and delivery management.
+              An eCommerce platform developed for a real business with online payments,
+              order management, and Shiprocket integration. I also built REST APIs so
+              the mobile application could work seamlessly with the same backend.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -96,10 +102,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--purple">React App</div>
             <h2 className="ap-card-title">Profile & User Management</h2>
             <p className="ap-card-desc">
-              React application featuring a personal profile page and full
-              user management module. Includes user listing with individual
-              detail views, routing between pages, and clean component
-              architecture — actively in development.
+              A React project I built while learning modern React concepts. It includes
+              user management, routing, reusable components, and a clean project
+              structure. I keep adding new features as I learn more.
             </p>
             <div className="ap-tags">
               <span>React</span>
@@ -124,10 +129,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--green">PHP Backend</div>
             <h2 className="ap-card-title">REST API for Mobile App</h2>
             <p className="ap-card-desc">
-              Scalable REST API built with PHP CodeIgniter to power a
-              mobile application. Implements JWT-based authentication,
-              role-based access control, and structured JSON responses
-              for all endpoints.
+              A secure REST API built with PHP and CodeIgniter for a mobile
+              application. It handles authentication, user roles, and structured API
+              responses, making it easy for the frontend team to integrate.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -152,10 +156,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--blue">React + Redux</div>
             <h2 className="ap-card-title">Shopping Cart App</h2>
             <p className="ap-card-desc">
-              E-commerce UI built with React featuring a product listing,
-              cart management, and checkout flow. State managed with Redux
-              Toolkit and data fetching with TanStack Query for a smooth
-              user experience.
+              A shopping cart application created to practice modern React tools like
+              Redux Toolkit and TanStack Query. Users can browse products, manage their
+              cart, and experience smooth state management throughout the app.
             </p>
             <div className="ap-tags">
               <span>React</span>
@@ -179,10 +182,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--purple">React App</div>
             <h2 className="ap-card-title">Weather Dashboard</h2>
             <p className="ap-card-desc">
-              Live weather application using OpenWeatherMap API. Displays
-              current weather, temperature, humidity, and 5-day forecast.
-              Features city search, geolocation support, and a clean
-              card-based UI.
+              A simple weather dashboard that displays live weather information using
+              the OpenWeather API. Users can search for any city and instantly view
+              temperature, humidity, and forecast details.
             </p>
             <div className="ap-tags">
               <span>React</span>
@@ -206,9 +208,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--amber">PHP + Full Stack</div>
             <h2 className="ap-card-title">School Management System</h2>
             <p className="ap-card-desc">
-              Multi-role school management system with separate dashboards
-              for admin, teachers, and students. Handles attendance, marks,
-              fee records, timetables, and report card generation.
+              A complete school management system designed to simplify daily academic
+              operations. It includes attendance, student records, fee management,
+              report cards, and separate dashboards for different users.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -232,10 +234,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--blue">React + Formik</div>
             <h2 className="ap-card-title">Multi-Step Form App</h2>
             <p className="ap-card-desc">
-              Complex multi-step registration form with real-time validation
-              using Formik and Yup. Includes step progress indicator,
-              field-level error messages, and a clean summary review
-              screen before final submission.
+              A multi-step registration form built with Formik and Yup. It focuses on
+              providing a smooth user experience with real-time validation, progress
+              tracking, and clean form navigation.
             </p>
             <div className="ap-tags">
               <span>React</span>
@@ -259,10 +260,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--green">PHP Backend</div>
             <h2 className="ap-card-title">Invoice Generator System</h2>
             <p className="ap-card-desc">
-              Business invoice generation system with client management,
-              product/service listing, and PDF export. Supports GST
-              calculations, discount logic, and email delivery of
-              invoices directly to clients.
+              An invoice management system that allows businesses to create and manage
+              professional invoices. It supports PDF generation, GST calculations, and
+              customer records to simplify billing tasks.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -286,10 +286,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--purple">React App</div>
             <h2 className="ap-card-title">Task Manager (To-Do App)</h2>
             <p className="ap-card-desc">
-              Productivity-focused task manager with categories, priority
-              levels, and due dates. Features drag-and-drop task reordering,
-              filter by status, and local storage persistence so tasks
-              survive page refresh.
+              A productivity app for managing daily tasks with categories, priorities,
+              and status filters. The project helped me improve my understanding of
+              React state management and reusable component design.
             </p>
             <div className="ap-tags">
               <span>React</span>
@@ -313,10 +312,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--amber">PHP + API</div>
             <h2 className="ap-card-title">Inventory Management System</h2>
             <p className="ap-card-desc">
-              Stock and inventory tracking system for small businesses.
-              Manages products, suppliers, purchase orders, and stock
-              levels. Sends low-stock alerts and generates monthly
-              inventory reports automatically.
+              An inventory management system built to keep track of products, stock,
+              suppliers, and purchase records. It helps businesses stay organized and
+              avoid running out of important inventory.
             </p>
             <div className="ap-tags">
               <span>PHP</span>
@@ -340,10 +338,9 @@ function AllProjects() {
             <div className="ap-badge ap-badge--blue">React + Context</div>
             <h2 className="ap-card-title">Blog Platform UI</h2>
             <p className="ap-card-desc">
-              Clean and minimal blog platform frontend with post listing,
-              category filtering, single post detail view, and a rich
-              text editor for writing. Implements lazy loading for images
-              and skeleton screens while content loads.
+              A clean blog interface developed with React featuring post listings,
+              category filters, and detailed article pages. The project focuses on a
+              smooth reading experience and reusable UI components.
             </p>
             <div className="ap-tags">
               <span>React</span>

@@ -9,8 +9,7 @@ function Footer() {
   const location = useLocation();
   return (
     <footer className="footer">
-      <div className="footer-glow" />
-      <div className="footer-grid-pattern" />
+
 
       <div className="footer-inner">
 
@@ -21,11 +20,16 @@ function Footer() {
             (
               <div className="footer-cta">
                 <div>
-                  <p className="footer-cta-eyebrow">Got something in mind?</p>
-                  <h3 className="footer-cta-title">Let's build it together.</h3>
+                  <p className="footer-cta-eyebrow">
+                    Have an idea or an opportunity?
+                  </p>
+
+                  <h3 className="footer-cta-title">
+                    I'd love to hear about it.
+                  </h3>
                 </div>
                 <a href="#contact" className="footer-cta-btn">
-                  Start a conversation
+                  Get In Touch
                 </a>
               </div>
             ) : null
@@ -43,10 +47,10 @@ function Footer() {
               Sagar<span>.dev</span>
             </h2>
             <p className="footer-tagline">
-              I'm a Surat-based developer who enjoys the unglamorous parts of
-              the job too — fixing that one API bug at midnight, refactoring
-              messy code, shipping things that actually work. Always up for
-              a good project.
+              I'm a Full Stack Developer based in Surat, India. I enjoy building
+              fast, reliable, and user-friendly web applications with PHP,
+              React, and modern web technologies. Always excited to work on
+              meaningful projects and learn something new along the way.
             </p>
             <div className="footer-socials">
               <a href="https://github.com/Sagar-Chotaliya393" target="_blank" rel="noreferrer"
@@ -66,7 +70,7 @@ function Footer() {
 
           {/* Navigation */}
           <div className="footer-col">
-            <h4 className="footer-heading">Explore</h4>
+            <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-list">
               {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
                 <li key={item}>
@@ -76,7 +80,7 @@ function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/forms" className="footer-link" style={{ display: "none"}}>
+                <Link to="/forms" className="footer-link" style={{ display: "none" }}>
                   Forms Playground
                 </Link>
               </li>
@@ -85,7 +89,7 @@ function Footer() {
 
           {/* Contact */}
           <div className="footer-col">
-            <h4 className="footer-heading">Reach Me</h4>
+            <h4 className="footer-heading">Contact</h4>
             <ul className="footer-list">
               <li>
                 <a href="tel:+917990881893" className="footer-link footer-link--break">
@@ -105,7 +109,7 @@ function Footer() {
 
             <div className="footer-status">
               <span className="footer-dot" />
-              Currently open to freelance work
+              Open to freelance projects and collaborations
             </div>
           </div>
 
@@ -117,15 +121,15 @@ function Footer() {
         {/* Bottom */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2026 Sagar Chotaliya. Designed and coded by yours truly, line by line.
+            © 2026 Sagar Chotaliya. Thanks for stopping by.
           </p>
 
           {
             location.pathname === '/' ?
               (
-                <a href="#home" className="footer-back-top" aria-label="Back to top">
+                <a href="#home" className="footer-back-top" aria-label="Return to Top">
                   <FaArrowUp size={12} />
-                  Back to top
+                  Return to Top
                 </a>
               ) : null
           }
