@@ -7,10 +7,12 @@ import Forms from  './component/forms/Forms';
 import { Routes, Route } from "react-router-dom";
 import SimpleForm from './component/form_details/simple_form/SimpleForm';
 import ValidationForm from './component/form_details/simple_validation/SimpleValidationForm';
+import Preloader from './component/preloader/Preloader';
 
 function App() {
   return (
     <div className="App">
+      <Preloader />
       <Header />
 
       <Routes>

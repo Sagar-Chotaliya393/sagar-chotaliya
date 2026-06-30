@@ -117,6 +117,14 @@ function Header() {
             aria-label="Mobile navigation"
             aria-hidden={!menuOpen}
           >
+            <button
+              className="mobile-menu-close"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              <FaTimes />
+            </button>
             {navLinks.map((link) => (
               <a
                 key={link.id}

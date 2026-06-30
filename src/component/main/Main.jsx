@@ -100,6 +100,89 @@ function SkillBar({ name, level }) {
 
 /* ─── MAIN ─── */
 function Main() {
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // typing કરતી વખતે error clear કરો
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = { name: "", email: "", message: "" };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+      isValid = false;
+    } else if (formData.name.trim().length < 3) {
+      newErrors.name = "Name must be at least 3 characters.";
+      isValid = false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+      isValid = false;
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required.";
+      isValid = false;
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    const whatsappNumber = "917990881893";
+
+    const text = `*New Portfolio Inquiry*
+―――――――――――――――――
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Message:* ${formData.message}
+―――――――――――――――――
+Portfolio: https://sagar-chotaliya.vercel.app/`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    setFormData({ name: "", email: "", message: "" });
+    setErrors({ name: "", email: "", message: "" });
+  };
+
+
   const [scrollPct, setScrollPct] = useState(0);
 
   useEffect(() => {
@@ -944,48 +1027,63 @@ function Main() {
                 Fill out the form below and I'll get back to you as soon as possible.
               </p>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleFormSubmit} noValidate>
 
                 <div>
-
                   <label className="block mb-2 font-medium text-slate-700">
                     Full Name
                   </label>
 
                   <input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
-                    className="w-full border border-gray-300 rounded-xl px-4 py-3 input-field"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    className={`w-full border rounded-xl px-4 py-3 input-field ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                      }`}
                   />
-
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 <div>
-
                   <label className="block mb-2 font-medium text-slate-700">
                     Email Address
                   </label>
 
                   <input
                     type="email"
+                    name="email"
                     placeholder="your@email.com"
-                    className="w-full border border-gray-300 rounded-xl px-4 py-3 input-field"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    className={`w-full border rounded-xl px-4 py-3 input-field ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                      }`}
                   />
-
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
-
                   <label className="block mb-2 font-medium text-slate-700">
                     Message
                   </label>
 
                   <textarea
                     rows="6"
+                    name="message"
                     placeholder="Tell me about your project or idea..."
-                    className="w-full border border-gray-300 rounded-xl px-4 py-3 resize-none input-field"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    className={`w-full border rounded-xl px-4 py-3 resize-none input-field ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                      }`}
                   />
-
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                  )}
                 </div>
 
                 <button

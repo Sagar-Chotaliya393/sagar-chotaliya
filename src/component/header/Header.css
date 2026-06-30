@@ -138,6 +138,18 @@
   transition: color 0.2s ease;
 }
 
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #0f172a;
+  cursor: pointer;
+  padding: 6px;
+}
+
 .mobile-menu a:last-child {
   border-bottom: none;
 }
