@@ -5,7 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f172a;
+  overflow: hidden;
+
+  /* Same feel as the hero section: blue-50 -> white -> indigo-50 */
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #eef2ff 100%);
+
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -15,29 +19,67 @@
   pointer-events: none;
 }
 
+/* ─── Soft background blobs ─── */
+.preloader-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+}
+
+.preloader-blob--top {
+  width: 320px;
+  height: 320px;
+  top: -80px;
+  left: -80px;
+  background: #bfdbfe; /* blue-200 */
+}
+
+.preloader-blob--bottom {
+  width: 360px;
+  height: 360px;
+  bottom: -100px;
+  right: -100px;
+  background: #c7d2fe; /* indigo-200 */
+}
+
+/* ─── Content ─── */
 .preloader-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 /* Logo with rotating ring */
-/* Logo with rotating ring */
 .logo-wrapper {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.preloader-logo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
+.logo-glow {
+  position: absolute;
+  inset: 8px;
   border-radius: 50%;
+  background: #2563eb; /* blue-600 */
+  opacity: 0.25;
+  filter: blur(18px);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.preloader-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2563eb; /* blue-600, matches profile-img border */
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
   z-index: 2;
   animation: pulse 1.8s ease-in-out infinite;
 }
@@ -47,8 +89,8 @@
   inset: 0;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-top-color: #3b82f6;
-  border-right-color: #3b82f6;
+  border-top-color: #2563eb;
+  border-right-color: #6366f1; /* indigo-500 accent */
   animation: spin 1.4s linear infinite;
 }
 
@@ -66,7 +108,7 @@
 .preloader-text {
   font-size: 32px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a; /* slate-900, matches hero-name */
   letter-spacing: -0.3px;
   margin: 0;
   opacity: 0;
@@ -74,15 +116,47 @@
 }
 
 .preloader-text span {
-  color: #3b82f6;
+  color: #2563eb; /* blue-600 */
 }
 
 .preloader-subtext {
   font-size: 15px;
-  color: #94a3b8;
+  color: #64748b; /* slate-500 */
   margin: 0;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards 0.5s;
+}
+
+/* Loading dots */
+.preloader-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards 0.7s;
+}
+
+.preloader-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+  animation: dotBounce 1.2s ease-in-out infinite;
+}
+
+.preloader-dots span:nth-child(2) {
+  background: #4f46e5;
+  animation-delay: 0.15s;
+}
+
+.preloader-dots span:nth-child(3) {
+  background: #6366f1;
+  animation-delay: 0.3s;
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40% { transform: translateY(-6px); opacity: 1; }
 }
 
 @keyframes fadeInUp {
